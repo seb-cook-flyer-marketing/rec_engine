@@ -4,41 +4,87 @@
         "Subtitle": "Our love for this shirt stems from the florals",
         "Description": "Achieve blooming beautiful style with this floral print short sleeve shirt! Showcasing a striking blue colourway that’s scattered with bright flowers in shades of orange, green and yellow, this casual shirt is nothing if not eye-catching! The relaxed fit is complemented by loose short sleeves and a curved hem, while the classic collar adds a structured accent to this vibrant, button-down shirt.",
         "Price": 8.00,
-        "Link": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-navy-991056216528"
+        "Gender": "Mens",
+        "Category": "Clothing",
+        "Subcategory": "Shirts",
+        "Url": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-navy-991056216528",
+        "Image": "https://cdn.media.amplience.net/i/primark/991056216528_01?w=2048&fmt=auto"
     },
     {
         "Title": "Floral Print Short Sleeve Shirt",
         "Subtitle": "The floral shirt with warming vibes",
         "Description": "Stock up on sunny weather essential tops like this floral print short sleeve shirt. With an all-over hibiscus print, mustard yellow and navy blue colour palette, button-up fastenings, short sleeves and an open collar, it’s an effortless shirt with warming vibes. Perfect for holiday when you’re heading to the beach bar, or at home paired with jeans for a BBQ with friends, we have a feeling this floral shirt won’t spend much time in the wardrobe!",
         "Price": 9.00,
-        "Link": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-mustard-991056458210"
+        "Gender": "Mens",
+        "Category": "Clothing",
+        "Subcategory": "Shirts",
+        "Url": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-mustard-991056458210",
+        "Image": "https://cdn.media.amplience.net/i/primark/991056458210_01?w=2048&fmt=auto"
     },
     {
         "Title": "Floral Print Short Sleeve Shirt",
         "Subtitle": "This shirt is bringing florals back from the ‘70s",
         "Description": "Fashion is a bit like a boomerang, wait long enough and you’ll be able to catch a trend again, and this short sleeve shirt is embracing some ‘70s boho looks. With a deep red base colour and a shoulder to hem floral print in black, red and yellow tones it’s definitely channeling a few disco vibes too. The collar, short sleeves and button-up front create a look that will shine with chinos and sandals for a beach ready look or teamed with shorts for a more festival-ready style.",
         "Price": 12.00,
-        "Link": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-tobacco-991065324630"
+        "Gender": "Mens",
+        "Category": "Clothing",
+        "Subcategory": "Shirts",
+        "Url": "https://www.primark.com/en-gb/p/floral-print-short-sleeve-shirt-tobacco-991065324630",
+        "Image": "https://cdn.media.amplience.net/i/primark/991065324630_01?w=2048&fmt=auto"
     },
     {
         "Title": "Stripe Strap Pool Slides",
         "Subtitle": "These slides are a comfy choice for everyday wear- a real star in stripes!",
         "Description": "Pool slides are the perfect casual shoe to slip into whether you're holidaying, getting work done around the house or garden, or even popping to the shops on those off-duty days! Crafted with a thick, cushioned sole, this style features a moulded footbed for improved comfort while the wide strap which features a bold stripe print helps them feel secure as you go about your day. Pair with shorts and a light tee for a beach-ready look or with your most comfortable clothes for those last minute or low-key missions- either way, we see these being a style you opt for often. Buckles and laces, who?",
         "Price": 10.00,
-        "link": "https://www.primark.com/en-gb/p/stripe-strap-pool-slides-black-991057219804"
+        "Gender": "Mens",
+        "Category": "Clothing",
+        "Subcategory": "Shirts",
+        "Url": "https://www.primark.com/en-gb/p/stripe-strap-pool-slides-black-991057219804",
+        "Image": "https://cdn.media.amplience.net/i/primark/991057219804_01?w=2048&fmt=auto"
     },
     {
         "Title": "Tinted Rectangular Sunglasses",
         "Subtitle": "Rays and shine, it’s sunglasses season",
         "Description": "Sunglasses are a summer essential, and these tinted rectangular sunglasses are a great choice for the season. With a black frame and tinted lenses, they’re a classic style that will go with everything from your beachwear to your BBQ outfit. The rectangular shape is a flattering style for most face shapes, and the tinted lenses will help you see clearly on those bright days. The perfect pair of sunglasses for your summer wardrobe.",
-        "link": "https://www.primark.com/en-gb/p/tinted-rectangular-sunglasses-black-991059831804",
-        "Price": 1.50
+        "Url": "https://www.primark.com/en-gb/p/tinted-rectangular-sunglasses-black-991059831804",
+        "Gender": "Mens",
+        "Category": "Accessories",
+        "Subcategory": "Sunglasses",
+        "Price": 1.50,
+        "Image": "https://cdn.media.amplience.net/i/primark/991059831804_01?w=2048&fmt=auto"
     },
     {
         "Title": "2pk Palm Tree Polo Shirts",
         "Subtitle": "These timeless T-shirts can be styled to suit any occasion",
         "Description": "Inject their wardrobe with a touch of the tropical with these palm tree polo shirts. Both in the classic polo style, they feature a collar, button fastening and elasticated short sleeves for added comfort. Designed in bright summery colours to help spread some joy, one of the tops is light blue with an all-over palm pattern, whilst the second shirt is green with one palm tree embroidered on the front. Best of all, their versatility means that they can be tailored to suit any occasion, dress them up with trousers and boots for smart occasions, while pairing them with jeans and trainers will create the perfect casual look. No matter the occasion, we’re sure that these tops will be your new go-to piece in their wardrobe!",
         "Price": 6.00,
-        "Link": "https://www.primark.com/en-gb/p/2pk-palm-tree-polo-shirts-multi-991044709935"
+        "Category": "Kids",
+        "Gender": "Boys",
+        "Subcategory": "Shirts",
+        "Url": "https://www.primark.com/en-gb/p/2pk-palm-tree-polo-shirts-multi-991044709935",
+        "Image": "https://cdn.media.amplience.net/i/primark/991044709935_03?w=2048&fmt=auto"
+    },
+    {
+        "Title": "Turn-Up Denim Mom Shorts",
+        "Subtitle": "Make staying cool and looking cool effortless with these denim mom shorts!",
+        "Description": "The mom fit is a timeless classic that values comfort as much as style and we'll never get tired of seeing it in all of our favourite denim moments, including these shorts! Cut to a relaxed mom fit, these denim shorts feature a high waist for perfect cinching, rolled hems, a zip-fly front, belt loops, five pocket design and a yoke panel back. Effortless and ideal for all-day wear, this summer essential can be styled easily with your favourite tees, tank tops, camis, or cropped essentials and are versatile enough to work as a coverup on the beach with your swimsuit as well as being paired with tights and a jumper in cooler weather! This is our all-season pick every year!",
+        "Price": 11.00,
+        "Category": "Clothing",
+        "Gender": "Womans",
+        "Subcategory": "Shorts",
+        "Url": "https://www.primark.com/en-gb/p/turn-up-denim-mom-shorts-mid-blue-991058076510",
+        "Image": "https://cdn.media.amplience.net/i/primark/991058076510_01?w=2048&fmt=auto"
+    },
+    {
+        "Title": "Ribbed Cropped Cami Lounge Pyjama Top",
+        "Subtitle": "Relax in style with this casual and comfy cropped cami pyjama top!",
+        "Description": "Whether you're settling in to catch some Z's or you're lounging on your work-from-home or off duty days, this cropped cami is about to be your versatile favourite pyjama piece! Crafted with a soft stretch ribbed fabric for complete comfort and a perfect fit (made all the better by adjustable straps) this cami top offers light support while looking stylish thanks to the v neckline and cropped cut and, in a fun lilac, adds a pop of colour to your lounge and pyjama drawer. Perfect for pairing with pyjama bottoms, shorts, leggings, or even your favourite joggers around the house or styling as outerwear on those extra sunny days, we're getting these in every colour!",
+        "Price": 3.50,
+        "Category": "Clothing",
+        "Gender": "Womans",
+        "Subcategory": "Pyjama Tops",
+        "Url": "https://www.primark.com/en-gb/p/ribbed-cropped-cami-lounge-pyjama-top-blue-991059292505",
+        "Image": "https://cdn.media.amplience.net/i/primark/991059292505_01?w=2048&fmt=auto"
     }
 ]

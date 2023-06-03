@@ -1,12 +1,18 @@
 import { OpenAIApi, Configuration } from "openai"
-import products from "../data/products.json";
+import products from "../data/trending.json";
 
 type Product = {
-    Title: string,
-    Subtitle: string,
-    Description: string,
-    Price: number,
-    Link: string,
+    Title: string;
+    Subtitle: string;
+    Description: string;
+    Category: string;
+    Subcategory: string;
+    Price: number;
+    Url: string;
+    Gender: string;
+    Image: string;
+    Colour: string;
+    content: string;
 }
 const configuration = new Configuration({
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -16,16 +22,23 @@ const openai = new OpenAIApi(configuration);
 
 const productsList = products as Product[];
 
-export const generateTextFromProducts = () => {
+export const generateTextFromProducts = (): Product[] => {
     let textArray = [] as any[];
     productsList.map((product) => {
-        const input = `${product.Title} ${product.Subtitle} ${product.Description} ${product.Price} ${product.Link}`;
-        console.log(input);
+        const input = `${product.Title} ${product.Subtitle} ${product.Description} ${product.Gender} ${product.Category} ${product.Subcategory}`;
         textArray.push({
             content: input,
-            url: product.Link,
+            url: product.Url,
             token_count: 0,
             embedding: null,
+            image: product.Image,
+            title: product.Title,
+            subtitle: product.Subtitle,
+            description: product.Description,
+            category: product.Category,
+            subcategory: product.Subcategory,
+            price: product.Price,
+            gender: product.Gender
         });
     })
 
