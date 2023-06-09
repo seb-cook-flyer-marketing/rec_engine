@@ -84,6 +84,8 @@ export async function GET(req: NextRequest) {
 
     const [{ embedding }] = embeddingResponse.data.data;
 
+    console.log(embedding);
+
     const { error: matchError, data: products } = await supabaseClient.rpc(
       "match_products",
       {
@@ -95,20 +97,25 @@ export async function GET(req: NextRequest) {
     );
 
     if (matchError) {
-      throw new ApplicationError("Failed to match page sections", matchError);
+      throw new ApplicationError("Failed to match product", matchError);
     }
 
     const tokenizer = new GPT3Tokenizer({ type: "gpt3" });
     let tokenCount = 0;
     let contextText = "";
 
+    console.log(products);
+
     for (let i = 0; i < products.length; i++) {
       const product = products[i];
       const content =
-        product.content +
-        " product url: " +
+        "title: " +
+        product.title +
+        ", description: " +
+        product.description +
+        ", url: " +
         product.url +
-        " product image: " +
+        ", image: " +
         product.image;
       const encoded = tokenizer.encode(content);
       tokenCount += encoded.text.length;
@@ -119,7 +126,7 @@ export async function GET(req: NextRequest) {
         break;
       }
 
-      contextText += `${content.trim()}\n---\n`;
+      contextText += `{ ${content.trim()}},`;
     }
 
     console.log(contextText);
@@ -133,7 +140,7 @@ export async function GET(req: NextRequest) {
         You are a very enthusiastic Primark shopping assistant who loves to help people! 
         Given the following information from 
         the Primark products catalogue, answer the user's question using 
-        only that information.`;
+        only that information and return the answer in a very enthusiastic manner.`;
 
     const Yoda = oneLine`
         You are Yoda, the wise Jedi master. Given the following information from
@@ -144,6 +151,11 @@ export async function GET(req: NextRequest) {
         I want you to act like Bart Simpson. Given the following information from
         the Primark products catalogue, answer the user's question using
         only that information using the tone, manner and vocabulary Bart would use.`;
+
+    const RuPaul = oneLine`
+        You are RuPaul, the famous drag queen. Given the following information from
+        the Primark products catalogue, answer the user's question using
+        only that information using the tone, manner and vocabulary and be as Flamboyant as RuPaul.`;
 
     const messages: ChatCompletionRequestMessage[] = [
       {
@@ -156,9 +168,13 @@ export async function GET(req: NextRequest) {
                   and the answer is not explicitly available on the Primark website, say
                   "Sorry, I don't know how to help with that."
                 `}
-                
-                ${oneLine`
-                Always include product url and product image if available per product item.
+
+                ${oneLine`    
+            - return recommended products in an ordered list in the following format: 
+            1. product 1 include product title in the following format: # product title, 
+            include product image in the following format: ![product image]("Product Image"), 
+            include product description, include product url in the following format: [product title](product url) 
+            - Output as markdown
                 `}
               `,
       },
@@ -166,7 +182,7 @@ export async function GET(req: NextRequest) {
         role: ChatCompletionRequestMessageRoleEnum.User,
         content: codeBlock`
             Here are the Primark products:
-            ${contextText}
+            ${[contextText]}
           `,
       },
       {
@@ -184,16 +200,19 @@ export async function GET(req: NextRequest) {
               in the product context, say
               "Sorry, I don't know how to help with that."
             `}
-            ${oneLine`
-            - Prefer splitting your response into multiple paragraphs.
-            `}
 
-            ${oneLine`
-            - return the product image product url in this format: [![product image](product url)]
-            `}
-            ${oneLine`
+            ${oneLine`    
+            - return the products you recommend in an ordered list
+                `}
+
+            ${oneLine`    
+            - return recommended products as a list item in the following format and in this ordered: 
+            1. product 1 include product image in the following format: ![product image]("product title"),
+            include product title, 
+            include product description,
+            include product url in the following format: [product title](product url)
             - Output as markdown
-            `}
+                `}
           `,
       },
       {
