@@ -4,8 +4,9 @@ import { SSE } from "sse.js";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
-import { ElementContent } from "react-markdown/lib/ast-to-react";
-
+import { ElementContent, Components } from "react-markdown/lib/ast-to-react";
+import Link from "next/link";
+import favicon from "../static/favicon.png";
 type Product = {
   url: string;
   image: string;
@@ -13,32 +14,50 @@ type Product = {
 };
 
 export default function Chat(): React.ReactElement {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
+  const [question, setQuestion] = useState<string>("");
+  const [incoming, setIncoming] = useState({ role: "ai", message: "" });
+  const [newMessage, setNewMessage] = useState({
+    role: "ai",
+    message: "",
+  });
+  const [history, setHistory] = useState([]);
+  const [finished, setFinished] = useState(true);
+  const [message, setMessages] = useState([
+    {
+      role: "human",
+      message: "Hi",
+    },
+    {
+      role: "ai",
+      message:
+        "Hi there, I am Optimus Primark your personal shopping assistant here to help.",
+    },
+  ]);
   const [answer, setAnswer] = useState<string | undefined>("");
   const [isLoading, setIsLoading] = useState(false);
   const [isResponding, setIsResponding] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [products, setProducts] = useState<Product[]>([]);
-
   const cantHelp =
     answer?.trim() === "Sorry, I don't know how to help with that yet.";
   const status = isLoading
     ? "Optimus Primark is searching..."
     : isResponding
-    ? "Optimus Primark is responding..."
+    ? "Optimus Primark is responding"
     : cantHelp || hasError
     ? "Optimus Primark is has failed you"
     : undefined;
 
   const handleConfirm = useCallback(async (query: string) => {
-    setHasError(false);
-    setAnswer(undefined);
-    setIsLoading(true);
+    setFinished(false);
+    setMessages((prev) => [...prev, { role: "human", message: query }]);
+    console.log(query);
 
     const eventSource = new SSE(`/query/api?query=${query}`);
 
     function handleError<T>(err: T) {
       setIsLoading(false);
+      setFinished(true);
       setIsResponding(false);
       setHasError(true);
       console.error(err);
@@ -51,10 +70,12 @@ export default function Chat(): React.ReactElement {
 
         if (e.data === "[DONE]") {
           setIsResponding(false);
+          setFinished(true);
           return;
         }
 
         setIsResponding(true);
+        setFinished(false);
 
         const completionResponse: any = JSON.parse(e.data);
         const [
@@ -63,10 +84,7 @@ export default function Chat(): React.ReactElement {
           },
         ] = completionResponse.choices;
 
-        console.log(content);
-
         setAnswer((answer) => {
-          console.log(answer);
           if (content !== undefined) {
             return (answer ?? "") + content;
           }
@@ -80,6 +98,7 @@ export default function Chat(): React.ReactElement {
     eventSource.stream();
 
     setIsLoading(true);
+    setFinished(false);
   }, []);
 
   function handleResetPrompt() {
@@ -89,9 +108,66 @@ export default function Chat(): React.ReactElement {
     setHasError(false);
   }
 
+  const renderers = {
+    h1({ node, ...props }) {
+      return <h1 className="font-extrabold" {...props} />;
+    },
+    p({ node, ...props }) {
+      return <p className="text-base" {...props} />;
+    },
+    img({ node, ...props }) {
+      return (
+        <Image
+          src={props.src!}
+          alt={props.alt!}
+          title={props.title!}
+          width={300}
+          height={300}
+          className="rounded-lg w-full h-auto"
+        />
+      );
+    },
+    ol({ node, ...props }) {
+      return (
+        <ol className="list-none" {...props}>
+          <div className="space-y-10">{props.children}</div>
+        </ol>
+      );
+    },
+    li({ node, ...props }) {
+      node.children &&
+        node.children.map((child) => {
+          console.log(child);
+        });
+      return (
+        <li className="flex justify-end list-none" {...props}>
+          <div className="card w-96 bg-base-100 shadow-xl space-y-10">
+            {props.children}
+          </div>
+        </li>
+      );
+    },
+    a({ node, ...props }) {
+      const link = node.properties?.href as string;
+      return (
+        <div className="py-5">
+          <Link href={link} target="_blank">
+            <button className="btn btn-primary w-full">Buy Now</button>
+          </Link>
+        </div>
+      );
+    },
+  } as Components;
+
   useEffect(() => {
-    console.log(products);
-  }, [products]);
+    setNewMessage(incoming);
+  }, [incoming]);
+
+  useEffect(() => {
+    if (newMessage.message) {
+      setMessages((prevMsgs) => [...prevMsgs, newMessage]);
+    }
+  }, [finished]);
 
   return (
     <div
@@ -112,102 +188,42 @@ export default function Chat(): React.ReactElement {
           }
         }}
       ></input>
+
       {isLoading ||
         hasError ||
         (isResponding && (
-          <div className="text-sm text-scale-500 dark:text-scale-300">
-            {status}
+          <div className="flex flex-row">
+            <div>{status}</div>
+            <div className="pl-4">
+              <span className="loading loading-bars loading-md"></span>
+            </div>
           </div>
         ))}
-      {answer && (
-        <div className="text-sm text-scale-500 dark:text-scale-300">
-          <ReactMarkdown
-            className="space-y-3"
-            remarkPlugins={[remarkGfm]}
-            components={{
-              p({ node, ...props }) {
-                return <p className="text-base" {...props} />;
-              },
-              img({ src, alt, title }) {
-                return (
-                  <figure>
-                    <Image
-                      src={src!}
-                      alt={alt!}
-                      title={title}
-                      className="rounded max-w-[300px] max-h-[300px] object-contain"
-                      width={300}
-                      height={300}
-                    />
-                    <button className="btn btn-outline" type="button">
-                      Buy Now
-                    </button>
-                  </figure>
-                );
-              },
-              ol({ node, ...props }) {
-                return (
-                  <ol className="list-none" {...props}>
-                    <div className="space-y-10">{props.children}</div>
-                  </ol>
-                );
-              },
-              li({ node, ...props }) {
-                node &&
-                  node.children &&
-                  node.children.map((child) => {
-                    switch (child.type) {
-                      case "text":
-                        break;
-                      case "element": {
-                        child.children &&
-                          child.children.map((child1, index) => {
-                            switch (child1.type) {
-                              case "text":
-                                setProducts((products) => [
-                                  ...products,
-                                  (products[index] = {
-                                    url: "",
-                                    description: child1.value,
-                                    image: "",
-                                  }),
-                                ]);
-                              case "element": {
-                                child.children &&
-                                  child.children.map((child2: any) => {
-                                    switch (child2.tagName) {
-                                      case "a":
-                                        break;
-                                      case "img":
-                                        return (
-                                          <Image
-                                            src={child2.properties.src}
-                                            alt={child2.properties.alt}
-                                            title={child2.properties.title}
-                                          />
-                                        );
-                                    }
-                                  });
-                              }
-                            }
-                          });
-                      }
-                    }
-                  });
-                return (
-                  <li className="text-base space-y-3 list-item" {...props}>
-                    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                      <div className="card-body">{props.children}</div>
-                    </div>
-                  </li>
-                );
-              },
-            }}
-          >
-            {answer}
-          </ReactMarkdown>
-        </div>
-      )}
+      <div className="chat chat-start">
+        {question && (
+          <p className="text-sm text-scale-500 dark:text-scale-300">
+            {question}
+          </p>
+        )}
+      </div>
+      <div className="chat chat-end">
+        {answer && (
+          <div className="w-96 flex text-sm text-scale-500 dark:text-scale-300 justify-end">
+            <div className="chat-image avatar">
+              <div className="w-10 rounded-full">
+                <Image src={favicon} width={30} height={30} alt="logo" />
+              </div>
+            </div>
+            <ReactMarkdown
+              className="space-y-3 p-5"
+              remarkPlugins={[remarkGfm]}
+              components={renderers}
+            >
+              {answer}
+            </ReactMarkdown>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
