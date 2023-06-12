@@ -87,7 +87,7 @@ export default function Carousel({ values }: { values: any }) {
                       alt={product.id}
                       width="300"
                       height="300"
-                      loading="eager"
+                      loading="lazy"
                     />
                   </figure>
                   <div className="card-body">

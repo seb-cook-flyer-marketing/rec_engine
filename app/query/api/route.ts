@@ -181,7 +181,6 @@ export async function GET(req: NextRequest) {
       {
         role: ChatCompletionRequestMessageRoleEnum.User,
         content: codeBlock`
-            Here are the Primark products:
             ${[contextText]}
           `,
       },
@@ -218,7 +217,6 @@ export async function GET(req: NextRequest) {
       {
         role: ChatCompletionRequestMessageRoleEnum.User,
         content: codeBlock`
-            Here is my question:
             ${oneLine`${sanitizedQuery}`}
         `,
       },

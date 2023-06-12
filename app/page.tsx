@@ -1,4 +1,3 @@
-"use client";
 import Carousel from "../components/carousel";
 import { createClient } from "@supabase/supabase-js";
 
