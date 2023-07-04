@@ -1,0 +1,102 @@
+[
+  {
+    "role": "user",
+    "content": "can you recommend an outfit"
+  },
+  {
+    "role": "function",
+    "name": "get_product_recommendations",
+    "content": [
+      {
+        "id": 268,
+        "url": "https://www.primark.com/en-gb/p/running-shorts-pink-991056620306",
+        "content": "Running Shorts These vibrant shorts are a wardrobe must-have Shorts are a great way to build gym outfits that double as out-and-about clothes, and this pair is a perfect multi-occasion wear. The bright block colour of these shorts brings an eye-catching and fun feel to an outfit. The elasticated waist allows you to style the shorts how you'd like, and the fit can be adjusted with a drawstring to keep them comfortable. Pockets on the back and sides give you a place to store your phone or wallet. There is some minor detailing along the seams and hems that bring some extra interest to the look. Pair with your favourite tees and shirts for a great look. Men Clothing Shorts 5.00 White Pink Cobalt",
+        "similarity": 0.811623177823399,
+        "image": "https://cdn.media.amplience.net/i/primark/991056620306_01",
+        "title": "Running Shorts",
+        "description": "Shorts are a great way to build gym outfits that double as out-and-about clothes, and this pair is a perfect multi-occasion wear. The bright block colour of these shorts brings an eye-catching and fun feel to an outfit. The elasticated waist allows you to style the shorts how you'd like, and the fit can be adjusted with a drawstring to keep them comfortable. Pockets on the back and sides give you a place to store your phone or wallet. There is some minor detailing along the seams and hems that bring some extra interest to the look. Pair with your favourite tees and shirts for a great look."
+      },
+      {
+        "id": 744,
+        "url": "https://www.primark.com/en-gb/p/long-sleeve-denim-overshirt-indigo-991068654526",
+        "content": "Long Sleeve Denim Overshirt An over shirt that'll always be stylish. Product made using a minimum of 50% cotton from the Primark Sustainable Cotton Programme Denim has been a style winner for so long that we’re pretty sure it’ll never go out of fashion. So, top up your layering options with the timeless look of this denim overshirt. Coming in two fantastic colourways, this top has a classic look with a utilitarian flair. The collar, long sleeves with button cuffs, button-up front and two large patch pockets create a layering option that’s sure to become a go-to choice. Wear with the matching trousers and a white tee for a classic layered look or with cargos for an on-trend outfit. Men Clothing Shirts 20.00 Ecru Indigo",
+        "similarity": 0.809573567315692,
+        "image": "https://cdn.media.amplience.net/i/primark/991068654526_01",
+        "title": "Long Sleeve Denim Overshirt",
+        "description": "Denim has been a style winner for so long that we’re pretty sure it’ll never go out of fashion. So, top up your layering options with the timeless look of this denim overshirt. Coming in two fantastic colourways, this top has a classic look with a utilitarian flair. The collar, long sleeves with button cuffs, button-up front and two large patch pockets create a layering option that’s sure to become a go-to choice. Wear with the matching trousers and a white tee for a classic layered look or with cargos for an on-trend outfit."
+      },
+      {
+        "id": 822,
+        "url": "https://www.primark.com/en-gb/p/long-sleeve-denim-overshirt-ecru-991068654108",
+        "content": "Long Sleeve Denim Overshirt An over shirt that'll always be stylish. Product made using a minimum of 50% cotton from the Primark Sustainable Cotton Programme Denim has been a style winner for so long that we’re pretty sure it’ll never go out of fashion. So, top up your layering options with the timeless look of this denim overshirt. Coming in two fantastic colourways, this top has a classic look with a utilitarian flair. The collar, long sleeves with button cuffs, button-up front and two large patch pockets create a layering option that’s sure to become a go-to choice. Wear with the matching trousers and a white tee for a classic layered look or with cargos for an on-trend outfit. Men Clothing Shirts 20.00 Ecru Indigo",
+        "similarity": 0.809529460857489,
+        "image": "https://cdn.media.amplience.net/i/primark/991068654108_01",
+        "title": "Long Sleeve Denim Overshirt",
+        "description": "Denim has been a style winner for so long that we’re pretty sure it’ll never go out of fashion. So, top up your layering options with the timeless look of this denim overshirt. Coming in two fantastic colourways, this top has a classic look with a utilitarian flair. The collar, long sleeves with button cuffs, button-up front and two large patch pockets create a layering option that’s sure to become a go-to choice. Wear with the matching trousers and a white tee for a classic layered look or with cargos for an on-trend outfit."
+      },
+      {
+        "id": 309,
+        "url": "https://www.primark.com/en-gb/p/running-shorts-white-991056620002",
+        "content": "Running Shorts These vibrant shorts are a wardrobe must-have Shorts are a great way to build gym outfits that double as out-and-about clothes, and this pair is a perfect multi-occasion wear. The bright block colourways of these shorts bring an eye-catching and fun feel to an outfit. The elasticated waist allows you to style the shorts how you'd like, and the fit can be adjusted with a drawstring to keep them comfortable. Pockets on the back and sides give you a place to store your phone or wallet. There is some minor detailing along the seams and hems that bring some extra interest to the look. Pair with your favourite tees and shirts for a great look. Men Clothing Shorts 5.00 White Pink Cobalt",
+        "similarity": 0.808661410739996,
+        "image": "https://cdn.media.amplience.net/i/primark/991056620002_01",
+        "title": "Running Shorts",
+        "description": "Shorts are a great way to build gym outfits that double as out-and-about clothes, and this pair is a perfect multi-occasion wear. The bright block colourways of these shorts bring an eye-catching and fun feel to an outfit. The elasticated waist allows you to style the shorts how you'd like, and the fit can be adjusted with a drawstring to keep them comfortable. Pockets on the back and sides give you a place to store your phone or wallet. There is some minor detailing along the seams and hems that bring some extra interest to the look. Pair with your favourite tees and shirts for a great look."
+      },
+      {
+        "id": 246,
+        "url": "https://www.primark.com/en-gb/p/zip-up-hoodie-lilac-991055755556",
+        "content": "Zip-up Hoodie This hoodie is a simple wardrobe addition with a big impact  Men Clothing Hoodies & Sweatshirts 9.00 White Blue Lilac",
+        "similarity": 0.808351635894135,
+        "image": "https://cdn.media.amplience.net/i/primark/991055755556_01",
+        "title": "Zip-up Hoodie",
+        "description": ""
+      },
+      {
+        "id": 214,
+        "url": "https://www.primark.com/en-gb/p/zip-up-hoodie-blue-991055755505",
+        "content": "Zip-up Hoodie This hoodie is a simple wardrobe addition with a big impact  Men Clothing Hoodies & Sweatshirts 9.00 White Blue Lilac",
+        "similarity": 0.808333201132065,
+        "image": "https://cdn.media.amplience.net/i/primark/991055755505_01",
+        "title": "Zip-up Hoodie",
+        "description": ""
+      },
+      {
+        "id": 682,
+        "url": "https://www.primark.com/en-gb/p/crew-neck-cotton-t-shirt-bright-green-991037347434",
+        "content": "Crew Neck Cotton T-shirt A wardrobe staple, the humble short sleeve tee perfects any outfit Wardrobe staples earn their title for good reason — they’re year-round styles that work with an assortment of personal aesthetics and pair effortlessly with almost anything. Would you look at this, we’ve just done a stellar job at describing this crew neck cotton T-shirt. Nothing short of essential status, this tee is made from cotton jersey for comfortable wear and features a round neck (as expected), short sleeves and a straight hem. Whether you don this classic clothing piece with cargo trousers and an oversized puffer jacket for streetwear style points or opt for ripped black jeans and a biker jacket, the choices for flaunting this tee are endless. Men Clothing Tops & T-Shirts 2.50 Bright Green",
+        "similarity": 0.808272096257127,
+        "image": "https://cdn.media.amplience.net/i/primark/991037347434_01",
+        "title": "Crew Neck Cotton T-shirt",
+        "description": "Wardrobe staples earn their title for good reason — they’re year-round styles that work with an assortment of personal aesthetics and pair effortlessly with almost anything. Would you look at this, we’ve just done a stellar job at describing this crew neck cotton T-shirt. Nothing short of essential status, this tee is made from cotton jersey for comfortable wear and features a round neck (as expected), short sleeves and a straight hem. Whether you don this classic clothing piece with cargo trousers and an oversized puffer jacket for streetwear style points or opt for ripped black jeans and a biker jacket, the choices for flaunting this tee are endless."
+      },
+      {
+        "id": 321,
+        "url": "https://www.primark.com/en-gb/p/zip-up-hoodie-white-991055755002",
+        "content": "Zip-up Hoodie This hoodie is a simple wardrobe addition with a big impact The hoodie is sometimes looked at as a piece of clothing for colder weather and outdoor wear, but this fabulous style lends itself to year-round, fashionable use. The long sleeves have elasticated cuffs, and when combined with the deep hood, you have all the elements for a comfortable and warm hoodie. But the zip-up front and vibrant colours make this piece a versatile choice. Wear it closed when going outside or when it's cold, but when the weather gets warmer, or you want an outfit with a difference, unzip the front and wear this piece the same way you would an overshirt - a great layering option for a new style of outfit. Men Clothing Hoodies & Sweatshirts 9.00 White Blue Lilac",
+        "similarity": 0.808003478099687,
+        "image": "https://cdn.media.amplience.net/i/primark/991055755002_01",
+        "title": "Zip-up Hoodie",
+        "description": "The hoodie is sometimes looked at as a piece of clothing for colder weather and outdoor wear, but this fabulous style lends itself to year-round, fashionable use. The long sleeves have elasticated cuffs, and when combined with the deep hood, you have all the elements for a comfortable and warm hoodie. But the zip-up front and vibrant colours make this piece a versatile choice. Wear it closed when going outside or when it's cold, but when the weather gets warmer, or you want an outfit with a difference, unzip the front and wear this piece the same way you would an overshirt - a great layering option for a new style of outfit."
+      },
+      {
+        "id": 838,
+        "url": "https://www.primark.com/en-gb/p/short-sleeve-crew-neck-t-shirt-orange-991048747260",
+        "content": "Short Sleeve Crew Neck T-shirt This short sleeve cotton shirt is a wardrobe essential T-shirts are a wardrobe essential that can form the basis of your whole look. These short sleeve tees have a rounded neck that creates a similar silhouette that you can build an outfit around. Made from a soft and comfortable material, this is an excellent option for a casual or slightly more formal outfit. Pair with jeans or joggers to form a causal style, or with chinos and a jacket when you want a more formal look. Choose your layering options based on the season, so choose an overshirt in the warmer months or a zipped-up jacket as the weather gets chilly. Men Clothing Tops & T-Shirts 3.50 Ecru Orange Plum Bright Purple",
+        "similarity": 0.806604910261971,
+        "image": "https://cdn.media.amplience.net/i/primark/991048747260_01",
+        "title": "Short Sleeve Crew Neck T-shirt",
+        "description": "T-shirts are a wardrobe essential that can form the basis of your whole look. These short sleeve tees have a rounded neck that creates a similar silhouette that you can build an outfit around. Made from a soft and comfortable material, this is an excellent option for a casual or slightly more formal outfit. Pair with jeans or joggers to form a causal style, or with chinos and a jacket when you want a more formal look. Choose your layering options based on the season, so choose an overshirt in the warmer months or a zipped-up jacket as the weather gets chilly."
+      },
+      {
+        "id": 883,
+        "url": "https://www.primark.com/en-gb/p/short-sleeve-crew-neck-t-shirt-ecru-991048747108",
+        "content": "Short Sleeve Crew Neck T-shirt This short sleeve cotton shirt is a wardrobe essential T-shirts are a wardrobe essential that can form the basis of your whole look. These short sleeve tees have a rounded neck that creates a similar silhouette that you can build an outfit around. Made from a soft and comfortable material, this is an excellent option for a casual or slightly more formal outfit. Pair with jeans or joggers to form a causal style, or with chinos and a jacket when you want a more formal look. Choose your layering options based on the season, so choose an overshirt in the warmer months or a zipped-up jacket as the weather gets chilly. Men Clothing Tops & T-Shirts 3.50 Ecru Orange Plum Bright Purple",
+        "similarity": 0.806574044009546,
+        "image": "https://cdn.media.amplience.net/i/primark/991048747108_01",
+        "title": "Short Sleeve Crew Neck T-shirt",
+        "description": "T-shirts are a wardrobe essential that can form the basis of your whole look. These short sleeve tees have a rounded neck that creates a similar silhouette that you can build an outfit around. Made from a soft and comfortable material, this is an excellent option for a casual or slightly more formal outfit. Pair with jeans or joggers to form a causal style, or with chinos and a jacket when you want a more formal look. Choose your layering options based on the season, so choose an overshirt in the warmer months or a zipped-up jacket as the weather gets chilly."
+      }
+    ]
+  }
+]

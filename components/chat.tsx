@@ -4,7 +4,7 @@ import { SSE } from "sse.js";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
-import { ElementContent, Components } from "react-markdown/lib/ast-to-react";
+import { Components } from "react-markdown/lib/ast-to-react";
 import Link from "next/link";
 import favicon from "../static/favicon.png";
 import { v4 } from "uuid";
@@ -174,7 +174,7 @@ export default function Chat(): React.ReactElement {
 
   return (
     <div
-      className={`mx-auto max-h-full flex flex-col rounded-lg p-4 md:pt-6 md:px-6 pb-2 w-full border text-left border-scale-500 cursor-auto relative [overflow-anchor: none]`}
+      className={`mx-auto flex flex-col rounded-lg pt-6 px-6 pb-2 w-full text-left border-scale-500 cursor-auto relative`}
       ref={chatRef}
     >
       {messages &&
@@ -189,7 +189,7 @@ export default function Chat(): React.ReactElement {
                 )}
               </div>
               {message.role === "assistant" && (
-                <div className="chat chat-end pb-20">
+                <div className="chat chat-end p-24">
                   <div className="w-96 flex text-sm text-scale-500 dark:text-scale-300 justify-end">
                     <div className="chat-image avatar">
                       <div className="w-10 rounded-full">
@@ -215,7 +215,7 @@ export default function Chat(): React.ReactElement {
           );
         })}
 
-      <div className="absolute h-12 flex flex-row w-full justify-center bottom-0 right-0 [overflow-anchor: auto] p-1">
+      <div className="sticky bottom-0 h-12 flex flex-row justify-center right-0 px-10 mb-10">
         {isLoading ||
           hasError ||
           (isResponding && (

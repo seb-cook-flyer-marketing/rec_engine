@@ -7,9 +7,9 @@ export default function ChatWrapper() {
 
   return (
     <div className="">
-      <div className="absolute right-4">
+      <div className="btn btn-primary absolute right-4">
         <button
-          className="btn btn-primary"
+          className=""
           onClick={(e) => {
             e.preventDefault();
             dialogRef && dialogRef.current && dialogRef.current?.showModal();
@@ -31,19 +31,18 @@ export default function ChatWrapper() {
           </svg>
         </button>
       </div>
-      <div className="">
+      <div className="w-screen">
         <dialog id="chat_modal" className="modal" ref={dialogRef}>
-          <form method="dialog" className="modal-box w-11/12">
-            <label
-              htmlFor="chat_modal"
+          <form method="dialog" className="modal-box">
+            <div
               onClick={(e) => {
                 e.preventDefault();
                 dialogRef && dialogRef.current && dialogRef.current?.close();
               }}
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 z-[1002]"
+              className="sticky top-0 z-[1002]"
             >
-              ✕
-            </label>
+              <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+            </div>
             <Chat />
           </form>
         </dialog>

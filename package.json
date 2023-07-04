@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.22.0",
+    "@supabase/supabase-js": "^2.26.0",
     "@types/common-tags": "^1.8.1",
     "@types/node": "20.2.3",
     "@types/react": "18.2.7",
@@ -23,7 +23,7 @@
     "eslint-config-next": "13.4.3",
     "gpt3-tokenizer": "^1.1.5",
     "next": "13.4.3",
-    "openai": "^3.2.1",
+    "openai": "^3.3.0",
     "postcss": "8.4.23",
     "puppeteer": "^20.5.0",
     "react": "18.2.0",
@@ -36,6 +36,6 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "daisyui": "^3.0.0"
+    "daisyui": "^3.1.7"
   }
 }
