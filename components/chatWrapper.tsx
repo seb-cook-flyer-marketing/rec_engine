@@ -6,10 +6,10 @@ export default function ChatWrapper() {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   return (
-    <div className="">
-      <div className="btn btn-primary absolute right-4">
+    <div className=" h-full">
+      <div className="absolute right-4">
         <button
-          className=""
+          className="btn btn-primary"
           onClick={(e) => {
             e.preventDefault();
             dialogRef && dialogRef.current && dialogRef.current?.showModal();

@@ -174,7 +174,7 @@ export default function Chat(): React.ReactElement {
 
   return (
     <div
-      className={`mx-auto flex flex-col rounded-lg pt-6 px-6 pb-2 w-full text-left border-scale-500 cursor-auto relative`}
+      className={`mx-auto flex flex-col rounded-lg pt-6 px-6 pb-2 w-full text-left border-scale-500 cursor-auto `}
       ref={chatRef}
     >
       {messages &&
@@ -215,7 +215,7 @@ export default function Chat(): React.ReactElement {
           );
         })}
 
-      <div className="sticky bottom-0 h-12 flex flex-row justify-center right-0 px-10 mb-10">
+      <div className="sticky w-full bottom-0 flex flex-row justify-center right-0 mb-10 pb-10">
         {isLoading ||
           hasError ||
           (isResponding && (
@@ -227,7 +227,7 @@ export default function Chat(): React.ReactElement {
             </div>
           ))}
         <input
-          className="w-full h-full input input-primary"
+          className="w-full h-12 input input-primary"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="I am Optimus Primark your personal shopping assistant here to help."
